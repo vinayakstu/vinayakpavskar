@@ -2,72 +2,71 @@
 <html>
 <head>
 
-<title>Student Demo Website</title>
+<title>The Angler's Depot | Fishing Gear</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3S6K4RZN4Z">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3S6K4RZN4Z"></script>
 
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-gtag('config', 'G-3S6K4RZN4Z');  // Students replace with their Measurement ID
+  gtag('config', 'G-3S6K4RZN4Z'); 
 </script>
 
 </head>
 
-<body style="font-family: Arial; text-align:center;">
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center; background-color: #f0f8ff; color: #333; padding: 20px;">
 
-<h1>Student Practice Website</h1>
-<p>Click the buttons below to generate events</p>
+    <h1>🎣 The Angler's Depot</h1>
+    <p>Premium gear for your next big catch.</p>
 
-<hr>
+    <hr>
 
-<h2>Product Section</h2>
+    <h2>Featured Gear: Carbon Fiber Casting Rod</h2>
+    
+    <button onclick="gtag('event', 'view_item', { 'item_name': 'Carbon Fiber Rod' });" style="padding: 10px 20px; cursor: pointer;">
+        View Rod Details
+    </button>
 
-<button onclick="gtag('event','view_product');">
-View Product
-</button>
+    <br><br>
 
-<br><br>
+    <button onclick="gtag('event', 'add_to_cart', { 'item_name': 'Carbon Fiber Rod', 'price': 89.99 });" style="padding: 10px 20px; cursor: pointer;">
+        Add Rod to Tackle Box
+    </button>
 
-<button onclick="gtag('event','add_to_cart');">
-Add to Cart
-</button>
+    <br><br>
 
-<br><br>
+    <button onclick="gtag('event', 'purchase', { 'transaction_id': 'T_12345', 'value': 89.99, 'currency': 'USD' });" style="padding: 10px 20px; background-color: #2e8b57; color: white; border: none; cursor: pointer;">
+        Checkout Now
+    </button>
 
-<button onclick="gtag('event','buy_now');">
-Buy Now
-</button>
+    <hr>
 
-<hr>
+    <h2>Angler Community</h2>
 
-<h2>User Actions</h2>
+    <button onclick="gtag('event', 'join_club');" style="padding: 10px 20px; cursor: pointer;">
+        Join Our Fishing Club
+    </button>
 
-<button onclick="gtag('event','signup_click');">
-Sign Up
-</button>
+    <br><br>
 
-<br><br>
+    <button onclick="gtag('event', 'guide_contact');" style="padding: 10px 20px; cursor: pointer;">
+        Contact a Local Guide
+    </button>
 
-<button onclick="gtag('event','contact_click');">
-Contact Us
-</button>
+    <hr>
 
-<hr>
-
-<a href="https://www.google.com"
-onclick="gtag('event','external_link_click');">
-Visit External Website
-</a>
+    <p>Need a license?</p>
+    <a href="https://www.takemefishing.org/get-a-fishing-license/" 
+       onclick="gtag('event', 'outbound_link', { 'destination': 'License Bureau' });" 
+       style="color: #0066cc; text-decoration: none; font-weight: bold;">
+        Check Local Fishing Regulations
+    </a>
 
 </body>
-
 </html>
 
