@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Student Demo Website</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-XXXXXXX');  // Students replace with their Measurement ID
+</script>
+
+</head>
+
+<body style="font-family: Arial; text-align:center;">
+
+<h1>Student Practice Website</h1>
+<p>Click the buttons below to generate events</p>
+
+<hr>
+
+<h2>Product Section</h2>
+
+<button onclick="gtag('event','view_product');">
+View Product
+</button>
+
+<br><br>
+
+<button onclick="gtag('event','add_to_cart');">
+Add to Cart
+</button>
+
+<br><br>
+
+<button onclick="gtag('event','buy_now');">
+Buy Now
+</button>
+
+<hr>
+
+<h2>User Actions</h2>
+
+<button onclick="gtag('event','signup_click');">
+Sign Up
+</button>
+
+<br><br>
+
+<button onclick="gtag('event','contact_click');">
+Contact Us
+</button>
+
+<hr>
+
+<a href="https://www.google.com"
+onclick="gtag('event','external_link_click');">
+Visit External Website
+</a>
+
+</body>
+</html>
