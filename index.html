@@ -1,146 +1,144 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <title>Blue Horizon Fishing Co. | Book Your Adventure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Student Demo Website</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX'); 
+    </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+    </script>
 
-<!-- Google Analytics Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-XXXXXXX'); 
-</script>
-
-<!-- Microsoft Clarity Script -->
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
-</script>
-
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; text-align: center; color: #333; background-color: #f0f8ff; }
+        header { background-color: #004466; color: white; padding: 2rem; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        .product-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        button { background-color: #0077be; color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        button:hover { background-color: #005f99; }
+        .secondary-btn { background-color: #555; margin-top: 10px; }
+        input { padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 5px; }
+        #paymentSection { background: #eef9ff; padding: 20px; border: 2px dashed #0077be; border-radius: 10px; margin-top: 20px; }
+        .price { font-size: 1.5rem; color: #004466; font-weight: bold; }
+        hr { border: 0; height: 1px; background: #ccc; margin: 40px 0; }
+    </style>
 </head>
+<body>
 
-<body style="font-family: Arial; text-align:center;">
+<header>
+    <h1>Blue Horizon Fishing Co.</h1>
+    <p>Premium Tackle & Deep Sea Charters</p>
+</header>
 
-<h1>Student Practice Website</h1>
-<p>Click the buttons below to generate events</p>
+<div class="container">
 
-<hr>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Fishing Reel" style="width:100%; border-radius:8px;">
+        <h2>Deep Sea Pro Reel v2</h2>
+        <p>Saltwater resistant, high-drag carbon fiber system.</p>
+        <p class="price">₹4,999</p>
 
-<h2>Product Section</h2>
+        <button onclick="gtag('event','view_item', {item_name: 'Deep Sea Pro Reel'});">
+            View Details
+        </button>
+        
+        <button onclick="gtag('event','add_to_cart', {item_name: 'Deep Sea Pro Reel', value: 4999});">
+            Add to Tackle Box
+        </button>
 
-<button onclick="gtag('event','view_product');">
-View Product
-</button>
+        <br><br>
 
-<br><br>
+        <button onclick="showPayment(); gtag('event','begin_checkout');">
+            Book Now / Buy Now
+        </button>
+    </div>
 
-<button onclick="gtag('event','add_to_cart');">
-Add to Cart
-</button>
+    <hr>
 
-<br><br>
+    <h2>Charters & Memberships</h2>
+    <div style="display: flex; justify-content: space-around; gap: 10px;">
+        <button class="secondary-btn" onclick="gtag('event','signup_click', {type: 'Newsletter'});">
+            Join Anglers Club
+        </button>
+        
+        <button class="secondary-btn" onclick="gtag('event','contact_click', {method: 'WhatsApp'});">
+            Contact Captain
+        </button>
+    </div>
 
-<button onclick="showPayment(); gtag('event','buy_now');">
-Buy Now
-</button>
+    <br>
+    <a href="https://www.worldfishingnetwork.com" target="_blank"
+       onclick="gtag('event','external_link_click', {site: 'WFN'});" 
+       style="color: #0077be; text-decoration: none; font-weight: bold;">
+       Check Local Fishing Reports →
+    </a>
 
-<hr>
+    <hr>
 
-<h2>User Actions</h2>
-
-<button onclick="gtag('event','signup_click');">
-Sign Up
-</button>
-
-<br><br>
-
-<button onclick="gtag('event','contact_click');">
-Contact Us
-</button>
-
-<hr>
-
-<a href="https://www.google.com"
-onclick="gtag('event','external_link_click');">
-Visit External Website
-</a>
-
-<hr>
-
-<h2>Dummy Payment Gateway</h2>
-
-<div id="paymentSection" style="display:none;">
-
-<p>Enter Card Number</p>
-
-<input type="text" id="cardNumber" placeholder="Enter Card Number">
-
-<br><br>
-
-<button onclick="processPayment()">Pay Now</button>
-
-<p id="paymentResult"></p>
-
-<p><b>Test Cards</b></p>
-
-<p>
-1111 1111 1111 1111 → Payment Success<br>
-2222 2222 2222 2222 → Payment Failed
-</p>
+    <div id="paymentSection" style="display:none;">
+        <h3>Secure Checkout</h3>
+        <p>Confirm booking for <b>Deep Sea Pro Reel</b></p>
+        <input type="text" id="cardNumber" placeholder="1111 1111 1111 1111">
+        <br><br>
+        <button onclick="processPayment()">Confirm Payment</button>
+        <p id="paymentResult"></p>
+        
+        <div style="font-size: 0.8rem; color: #666;">
+            <p><b>Demo Cards:</b> Success: 1111... | Fail: 2222...</p>
+        </div>
+    </div>
 
 </div>
 
 <script>
+    function showPayment() {
+        document.getElementById("paymentSection").style.display = "block";
+        document.getElementById("paymentSection").scrollIntoView({behavior: 'smooth'});
+    }
 
-function showPayment(){
-document.getElementById("paymentSection").style.display="block";
-}
+    function processPayment() {
+        let card = document.getElementById("cardNumber").value.replace(/\s/g,'');
+        let result = document.getElementById("paymentResult");
 
-function processPayment(){
+        if (card === "1111111111111111") {
+            result.innerHTML = "✅ Transaction Verified! Tight lines!";
+            result.style.color = "green";
 
-let card=document.getElementById("cardNumber").value.replace(/\s/g,'');
-let result=document.getElementById("paymentResult");
-
-if(card==="1111111111111111"){
-
-result.innerHTML="✅ Payment Successful!";
-result.style.color="green";
-
-gtag('event','purchase',{
-transaction_id:'DEMO'+Math.floor(Math.random()*100000),
-value:1000,
-currency:'INR'
-});
-
-}
-
-else if(card==="2222222222222222"){
-
-result.innerHTML="❌ Payment Failed!";
-result.style.color="red";
-
-}
-
-else{
-
-result.innerHTML="❌ Invalid Card - Payment Failed!";
-result.style.color="red";
-
-}
-
-}
-
+            // Advanced GA4 Purchase Event
+            gtag('event', 'purchase', {
+                transaction_id: 'FISH-' + Math.floor(Math.random() * 99999),
+                value: 4999,
+                currency: 'INR',
+                items: [{
+                    item_id: "REEL_001",
+                    item_name: "Deep Sea Pro Reel",
+                    item_category: "Tackle",
+                    price: 4999,
+                    quantity: 1
+                }]
+            });
+        } 
+        else if (card === "2222222222222222") {
+            result.innerHTML = "❌ Payment Declined by Bank.";
+            result.style.color = "red";
+        } 
+        else {
+            result.innerHTML = "❌ Invalid Card Format.";
+            result.style.color = "orange";
+        }
+    }
 </script>
 
 </body>
