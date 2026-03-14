@@ -1,82 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Angler's Depot | Fishing Gear</title>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3S6K4RZN4Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<title>Student Demo Website</title>
 
-        // This line connects your site to your Google Analytics account
-        gtag('config', 'G-3S6K4RZN4Z');
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vvgfy2a7e0");
-    </script>
+<!-- Google Analytics Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-XXXXXXX'); 
+</script>
+
+<!-- Microsoft Clarity Script -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+</script>
 
 </head>
 
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center; background-color: #f0f8ff; color: #333; padding: 20px;">
+<body style="font-family: Arial; text-align:center;">
 
-    <h1>🎣 The Angler's Depot</h1>
-    <p>Premium gear for your next big catch.</p>
+<h1>Student Practice Website</h1>
+<p>Click the buttons below to generate events</p>
 
-    <hr style="border: 0; height: 1px; background: #ccc; margin: 20px 0;">
+<hr>
 
-    <h2>Featured Gear: Carbon Fiber Casting Rod</h2>
-    
-    <button onclick="gtag('event', 'view_item', { 'item_name': 'Carbon Fiber Rod' });" 
-            style="padding: 10px 20px; cursor: pointer; border-radius: 5px; border: 1px solid #999;">
-        View Rod Details
-    </button>
+<h2>Product Section</h2>
 
-    <br><br>
+<button onclick="gtag('event','view_product');">
+View Product
+</button>
 
-    <button onclick="gtag('event', 'add_to_cart', { 'item_name': 'Carbon Fiber Rod', 'price': 89.99, 'currency': 'USD' });" 
-            style="padding: 10px 20px; cursor: pointer; border-radius: 5px; border: 1px solid #999;">
-        Add Rod to Tackle Box
-    </button>
+<br><br>
 
-    <br><br>
+<button onclick="gtag('event','add_to_cart');">
+Add to Cart
+</button>
 
-    <button onclick="gtag('event', 'purchase', { 'transaction_id': 'T_12345', 'value': 89.99, 'currency': 'USD', 'items': [{ 'item_name': 'Carbon Fiber Rod' }] });" 
-            style="padding: 10px 20px; background-color: #2e8b57; color: white; border: none; cursor: pointer; border-radius: 5px; font-weight: bold;">
-        Checkout Now
-    </button>
+<br><br>
 
-    <hr style="border: 0; height: 1px; background: #ccc; margin: 20px 0;">
+<button onclick="showPayment(); gtag('event','buy_now');">
+Buy Now
+</button>
 
-    <h2>Angler Community</h2>
+<hr>
 
-    <button onclick="gtag('event', 'join_club');" 
-            style="padding: 10px 20px; cursor: pointer; border-radius: 5px; border: 1px solid #999;">
-        Join Our Fishing Club
-    </button>
+<h2>User Actions</h2>
 
-    <br><br>
+<button onclick="gtag('event','signup_click');">
+Sign Up
+</button>
 
-    <button onclick="gtag('event', 'guide_contact');" 
-            style="padding: 10px 20px; cursor: pointer; border-radius: 5px; border: 1px solid #999;">
-        Contact a Local Guide
-    </button>
+<br><br>
 
-    <hr style="border: 0; height: 1px; background: #ccc; margin: 20px 0;">
+<button onclick="gtag('event','contact_click');">
+Contact Us
+</button>
 
-    <p>Need a license?</p>
-    <a href="https://www.takemefishing.org/get-a-fishing-license/" 
-       onclick="gtag('event', 'outbound_link', { 'destination': 'License Bureau' });" 
-       style="color: #0066cc; text-decoration: none; font-weight: bold;">
-        Check Local Fishing Regulations
-    </a>
+<hr>
+
+<a href="https://www.google.com"
+onclick="gtag('event','external_link_click');">
+Visit External Website
+</a>
+
+<hr>
+
+<h2>Dummy Payment Gateway</h2>
+
+<div id="paymentSection" style="display:none;">
+
+<p>Enter Card Number</p>
+
+<input type="text" id="cardNumber" placeholder="Enter Card Number">
+
+<br><br>
+
+<button onclick="processPayment()">Pay Now</button>
+
+<p id="paymentResult"></p>
+
+<p><b>Test Cards</b></p>
+
+<p>
+1111 1111 1111 1111 → Payment Success<br>
+2222 2222 2222 2222 → Payment Failed
+</p>
+
+</div>
+
+<script>
+
+function showPayment(){
+document.getElementById("paymentSection").style.display="block";
+}
+
+function processPayment(){
+
+let card=document.getElementById("cardNumber").value.replace(/\s/g,'');
+let result=document.getElementById("paymentResult");
+
+if(card==="1111111111111111"){
+
+result.innerHTML="✅ Payment Successful!";
+result.style.color="green";
+
+gtag('event','purchase',{
+transaction_id:'DEMO'+Math.floor(Math.random()*100000),
+value:1000,
+currency:'INR'
+});
+
+}
+
+else if(card==="2222222222222222"){
+
+result.innerHTML="❌ Payment Failed!";
+result.style.color="red";
+
+}
+
+else{
+
+result.innerHTML="❌ Invalid Card - Payment Failed!";
+result.style.color="red";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
