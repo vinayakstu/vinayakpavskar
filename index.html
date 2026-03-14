@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>JalJugaadu | Premium Angling & Fishing Gear</title>
+    <title>JalJugaadu | Premium Fishing Gear & Angling Adventures</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,163 +13,152 @@
         gtag('config', 'G-XXXXXXX'); 
     </script>
 
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
-    </script>
-
     <style>
         :root {
-            --primary-blue: #004466;
-            --accent-teal: #0077be;
-            --light-bg: #f4f7f6;
+            --primary-blue: #012a4a;
+            --ocean-blue: #014f86;
+            --sky-blue: #a9d6e5;
+            --action-green: #2c6e49;
+            --text-dark: #333;
             --white: #ffffff;
         }
 
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #333; line-height: 1.6; }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; margin: 0; background-color: #f8fbfd; color: var(--text-dark); line-height: 1.6; }
         
-        /* Navbar */
-        nav { background: var(--primary-blue); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav h1 { margin: 0; font-size: 1.5rem; letter-spacing: 1px; }
-        
+        /* Navigation */
+        nav { background: var(--primary-blue); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+
         /* Hero Section */
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'); 
-                background-size: cover; background-position: center; height: 300px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero { 
+            background: linear-gradient(rgba(1, 42, 74, 0.7), rgba(1, 42, 74, 0.7)), url('https://images.unsplash.com/photo-1516834474-48c0abc2a902?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover; background-position: center; height: 500px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+        }
+        .hero h2 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 25px; }
 
-        /* Product Grid */
-        .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        /* Grid Layout */
+        .container { max-width: 1200px; margin: 3rem auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--primary-blue); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
         
-        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-content { padding: 20px; flex-grow: 1; }
-        .price-tag { font-size: 1.25rem; font-weight: bold; color: var(--primary-blue); margin: 10px 0; }
+        /* Product Cards */
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid #e1e8ed; transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); border-color: var(--ocean-blue); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-content { padding: 15px; flex-grow: 1; text-align: left; }
+        .card-content h3 { font-size: 1.1rem; margin: 0 0 10px 0; height: 2.4em; overflow: hidden; }
+        .price { font-size: 1.3rem; font-weight: 700; color: var(--ocean-blue); display: block; margin-bottom: 15px; }
 
-        /* Buttons */
-        .btn { display: inline-block; background: var(--accent-teal); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-weight: 600; width: 100%; box-sizing: border-box; margin-bottom: 5px; }
-        .btn-checkout { background: #28a745; margin-top: 10px; }
-        
-        /* Payment Section */
-        #paymentSection { max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: none; border-top: 5px solid #28a745; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
-        
-        footer { background: #222; color: #ccc; padding: 2rem; text-align: center; margin-top: 50px; }
+        /* Shopping Buttons */
+        .btn { border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; transition: 0.2s; font-size: 0.9rem; }
+        .btn-cart { background: #eef6fc; color: var(--ocean-blue); margin-bottom: 8px; }
+        .btn-cart:hover { background: var(--ocean-blue); color: white; }
+        .btn-buy { background: var(--ocean-blue); color: white; }
+        .btn-buy:hover { background: var(--primary-blue); }
+
+        /* Payment Modal Styling */
+        #paymentSection { max-width: 450px; margin: 50px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: none; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 15px 0; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; }
+        input:focus { border-color: var(--ocean-blue); outline: none; }
     </style>
 </head>
 <body>
 
 <nav>
-    <h1>JalJugaadu</h1>
-    <div>
-        <small onclick="gtag('event','contact_click');" style="cursor:pointer">Support: +91 98XXX XXXXX</small>
+    <div class="logo">JalJugaadu</div>
+    <div class="nav-links">
+        <a href="#">Rods</a>
+        <a href="#">Reels</a>
+        <a href="#">Lures</a>
+        <a href="#">Apparel</a>
     </div>
 </nav>
 
 <div class="hero">
-    <h2>Master the Waters</h2>
-    <p>Professional Gear for Every Indian Angler</p>
+    <h2>Equipment for the Elite Angler</h2>
+    <p>Discover high-performance gear designed specifically for the diverse waters of India.</p>
+    <button class="btn btn-buy" style="width: auto; padding: 15px 40px;" onclick="window.scrollTo(0, 600)">Shop Collection</button>
 </div>
 
 <div class="container">
-    <h2 style="text-align: center; margin-bottom: 30px;">Featured Equipment</h2>
-    
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1615412704911-55d589229864?auto=format&fit=crop&w=400&q=80" alt="Spinning Reel">
-            <div class="card-content">
-                <h3>Vortex Carbon Reel</h3>
-                <p>Ultra-smooth 10+1 bearings, perfect for freshwater lakes.</p>
-                <p class="price-tag">₹3,200</p>
-                <button class="btn" onclick="trackAction('add_to_cart', 'Vortex Reel', 3200)">Add to Cart</button>
-                <button class="btn btn-checkout" onclick="initiateCheckout('Vortex Reel', 3200)">Buy Now</button>
-            </div>
+    <h2 class="section-title">Essential Fishing Gear</h2>
+    <div class="grid" id="productGrid">
         </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1593106410288-caf65eca7c9d?auto=format&fit=crop&w=400&q=80" alt="Fishing Rod">
-            <div class="card-content">
-                <h3>Titanium Cast Rod</h3>
-                <p>7ft Heavy action. Engineered for the toughest river catches.</p>
-                <p class="price-tag">₹5,500</p>
-                <button class="btn" onclick="trackAction('add_to_cart', 'Titanium Rod', 5500)">Add to Cart</button>
-                <button class="btn btn-checkout" onclick="initiateCheckout('Titanium Rod', 5500)">Buy Now</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1583151433602-0e86b20894e6?auto=format&fit=crop&w=400&q=80" alt="Lure Set">
-            <div class="card-content">
-                <h3>Neon Lure Multi-Pack</h3>
-                <p>Set of 12 high-visibility lures with treble hooks.</p>
-                <p class="price-tag">₹1,200</p>
-                <button class="btn" onclick="trackAction('add_to_cart', 'Lure Set', 1200)">Add to Cart</button>
-                <button class="btn btn-checkout" onclick="initiateCheckout('Lure Set', 1200)">Buy Now</button>
-            </div>
-        </div>
-    </div>
 
     <div id="paymentSection">
-        <h3 id="checkoutTitle">Secure Payment</h3>
-        <p>Enter your details to finalize your order.</p>
-        <input type="text" id="cardNumber" placeholder="Card Number (Use 1111 1111 1111 1111 for test)">
-        <button class="btn btn-checkout" onclick="processPayment()">Confirm & Pay</button>
-        <p id="paymentResult" style="margin-top: 15px; font-weight: bold;"></p>
+        <h3 id="checkoutItemName">Complete Your Order</h3>
+        <p id="checkoutPrice" class="price"></p>
+        <input type="text" id="cardNumber" placeholder="Card Number (1111... for success)">
+        <button class="btn btn-buy" style="padding: 15px;" onclick="processPayment()">Confirm Secure Payment</button>
+        <p id="paymentResult" style="margin-top: 20px; font-weight: 700;"></p>
     </div>
 </div>
 
-<footer>
-    <p>&copy; 2026 JalJugaadu Fishing Gear | Serving Anglers Across India</p>
+<footer style="background: var(--primary-blue); color: white; padding: 4rem 20px; text-align: center;">
+    <p>&copy; 2026 JalJugaadu Fishing Gear Co. | Tight Lines & Big Catches</p>
 </footer>
 
 <script>
-    let currentItem = {};
+    const products = [
+        { id: 1, name: "Carbon Fiber Spinning Rod", price: 4500, img: "https://images.unsplash.com/photo-1615412704911-55d589229864?w=400" },
+        { id: 2, name: "Elite Drag Saltwater Reel", price: 7200, img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400" },
+        { id: 3, name: "Multi-Color Lure Variety Pack", price: 1200, img: "https://images.unsplash.com/photo-1583151433602-0e86b20894e6?w=400" },
+        { id: 4, name: "Polarized Anti-Glare Shades", price: 2100, img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400" },
+        { id: 5, name: "Professional Anglers Vest", price: 3400, img: "https://images.unsplash.com/photo-16223755557374928173?w=400" },
+        { id: 6, name: "Braid-Steel Fishing Line (500m)", price: 950, img: "https://images.unsplash.com/photo-1593106410288-caf65eca7c9d?w=400" },
+        { id: 7, name: "Heavy Duty Tackle Organizer", price: 2800, img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400" },
+        { id: 8, name: "Compact Folding Landing Net", price: 1800, img: "https://images.unsplash.com/photo-1516834474-48c0abc2a902?w=400" }
+    ];
 
-    function trackAction(action, name, price) {
-        gtag('event', action, {
-            item_name: name,
-            value: price,
-            currency: 'INR'
-        });
-        alert(name + " added to your tackle box!");
+    const grid = document.getElementById('productGrid');
+    let selectedItem = null;
+
+    // Load Products
+    products.forEach(p => {
+        grid.innerHTML += `
+            <div class="card">
+                <img src="${p.img}" alt="${p.name}">
+                <div class="card-content">
+                    <h3>${p.name}</h3>
+                    <span class="price">₹${p.price.toLocaleString()}</span>
+                    <button class="btn btn-cart" onclick="trackEvent('add_to_cart', '${p.name}', ${p.price})">Add to Cart</button>
+                    <button class="btn btn-buy" onclick="openCheckout('${p.name}', ${p.price})">Buy Now</button>
+                </div>
+            </div>
+        `;
+    });
+
+    function trackEvent(event, name, val) {
+        gtag('event', event, { item_name: name, value: val, currency: 'INR' });
+        alert(name + " added to cart!");
     }
 
-    function initiateCheckout(name, price) {
-        currentItem = { name: name, price: price };
-        document.getElementById('checkoutTitle').innerText = "Checkout: " + name;
+    function openCheckout(name, price) {
+        selectedItem = { name, price };
+        document.getElementById('checkoutItemName').innerText = name;
+        document.getElementById('checkoutPrice').innerText = "₹" + price.toLocaleString();
         document.getElementById('paymentSection').style.display = 'block';
-        document.getElementById('paymentSection').scrollIntoView({behavior: 'smooth'});
-        
-        gtag('event', 'begin_checkout', {
-            value: price,
-            currency: 'INR',
-            items: [{ item_name: name, price: price }]
-        });
+        document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
     }
 
     function processPayment() {
-        let card = document.getElementById("cardNumber").value.replace(/\s/g,'');
-        let result = document.getElementById("paymentResult");
+        const card = document.getElementById('cardNumber').value;
+        const result = document.getElementById('paymentResult');
 
         if (card === "1111111111111111") {
-            result.innerHTML = "✅ Success! Shipping to your address soon.";
+            result.innerHTML = "✅ Payment Successful! Gear is on the way.";
             result.style.color = "green";
-
             gtag('event', 'purchase', {
-                transaction_id: 'JAL-' + Math.floor(Math.random() * 100000),
-                value: currentItem.price,
+                transaction_id: 'JJ-' + Math.floor(Math.random() * 100000),
+                value: selectedItem.price,
                 currency: 'INR',
-                items: [{
-                    item_name: currentItem.name,
-                    price: currentItem.price,
-                    quantity: 1
-                }]
+                items: [{ item_name: selectedItem.name, price: selectedItem.price }]
             });
         } else {
-            result.innerHTML = "❌ Payment Failed. Please check card details.";
+            result.innerHTML = "❌ Payment Failed. Try card 1111 1111 1111 1111.";
             result.style.color = "red";
         }
     }
