@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Blue Horizon Fishing Co. | Book Your Adventure</title>
+    <title>JalJugaadu | Premium Angling & Fishing Gear</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,90 +22,132 @@
     </script>
 
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; text-align: center; color: #333; background-color: #f0f8ff; }
-        header { background-color: #004466; color: white; padding: 2rem; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .product-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        button { background-color: #0077be; color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-size: 16px; transition: 0.3s; }
-        button:hover { background-color: #005f99; }
-        .secondary-btn { background-color: #555; margin-top: 10px; }
-        input { padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 5px; }
-        #paymentSection { background: #eef9ff; padding: 20px; border: 2px dashed #0077be; border-radius: 10px; margin-top: 20px; }
-        .price { font-size: 1.5rem; color: #004466; font-weight: bold; }
-        hr { border: 0; height: 1px; background: #ccc; margin: 40px 0; }
+        :root {
+            --primary-blue: #004466;
+            --accent-teal: #0077be;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #333; line-height: 1.6; }
+        
+        /* Navbar */
+        nav { background: var(--primary-blue); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav h1 { margin: 0; font-size: 1.5rem; letter-spacing: 1px; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'); 
+                background-size: cover; background-position: center; height: 300px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+
+        /* Product Grid */
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; flex-grow: 1; }
+        .price-tag { font-size: 1.25rem; font-weight: bold; color: var(--primary-blue); margin: 10px 0; }
+
+        /* Buttons */
+        .btn { display: inline-block; background: var(--accent-teal); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-weight: 600; width: 100%; box-sizing: border-box; margin-bottom: 5px; }
+        .btn-checkout { background: #28a745; margin-top: 10px; }
+        
+        /* Payment Section */
+        #paymentSection { max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: none; border-top: 5px solid #28a745; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        
+        footer { background: #222; color: #ccc; padding: 2rem; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Blue Horizon Fishing Co.</h1>
-    <p>Premium Tackle & Deep Sea Charters</p>
-</header>
+<nav>
+    <h1>JalJugaadu</h1>
+    <div>
+        <small onclick="gtag('event','contact_click');" style="cursor:pointer">Support: +91 98XXX XXXXX</small>
+    </div>
+</nav>
+
+<div class="hero">
+    <h2>Master the Waters</h2>
+    <p>Professional Gear for Every Indian Angler</p>
+</div>
 
 <div class="container">
+    <h2 style="text-align: center; margin-bottom: 30px;">Featured Equipment</h2>
+    
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615412704911-55d589229864?auto=format&fit=crop&w=400&q=80" alt="Spinning Reel">
+            <div class="card-content">
+                <h3>Vortex Carbon Reel</h3>
+                <p>Ultra-smooth 10+1 bearings, perfect for freshwater lakes.</p>
+                <p class="price-tag">₹3,200</p>
+                <button class="btn" onclick="trackAction('add_to_cart', 'Vortex Reel', 3200)">Add to Cart</button>
+                <button class="btn btn-checkout" onclick="initiateCheckout('Vortex Reel', 3200)">Buy Now</button>
+            </div>
+        </div>
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Fishing Reel" style="width:100%; border-radius:8px;">
-        <h2>Deep Sea Pro Reel v2</h2>
-        <p>Saltwater resistant, high-drag carbon fiber system.</p>
-        <p class="price">₹4,999</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1593106410288-caf65eca7c9d?auto=format&fit=crop&w=400&q=80" alt="Fishing Rod">
+            <div class="card-content">
+                <h3>Titanium Cast Rod</h3>
+                <p>7ft Heavy action. Engineered for the toughest river catches.</p>
+                <p class="price-tag">₹5,500</p>
+                <button class="btn" onclick="trackAction('add_to_cart', 'Titanium Rod', 5500)">Add to Cart</button>
+                <button class="btn btn-checkout" onclick="initiateCheckout('Titanium Rod', 5500)">Buy Now</button>
+            </div>
+        </div>
 
-        <button onclick="gtag('event','view_item', {item_name: 'Deep Sea Pro Reel'});">
-            View Details
-        </button>
-        
-        <button onclick="gtag('event','add_to_cart', {item_name: 'Deep Sea Pro Reel', value: 4999});">
-            Add to Tackle Box
-        </button>
-
-        <br><br>
-
-        <button onclick="showPayment(); gtag('event','begin_checkout');">
-            Book Now / Buy Now
-        </button>
-    </div>
-
-    <hr>
-
-    <h2>Charters & Memberships</h2>
-    <div style="display: flex; justify-content: space-around; gap: 10px;">
-        <button class="secondary-btn" onclick="gtag('event','signup_click', {type: 'Newsletter'});">
-            Join Anglers Club
-        </button>
-        
-        <button class="secondary-btn" onclick="gtag('event','contact_click', {method: 'WhatsApp'});">
-            Contact Captain
-        </button>
-    </div>
-
-    <br>
-    <a href="https://www.worldfishingnetwork.com" target="_blank"
-       onclick="gtag('event','external_link_click', {site: 'WFN'});" 
-       style="color: #0077be; text-decoration: none; font-weight: bold;">
-       Check Local Fishing Reports →
-    </a>
-
-    <hr>
-
-    <div id="paymentSection" style="display:none;">
-        <h3>Secure Checkout</h3>
-        <p>Confirm booking for <b>Deep Sea Pro Reel</b></p>
-        <input type="text" id="cardNumber" placeholder="1111 1111 1111 1111">
-        <br><br>
-        <button onclick="processPayment()">Confirm Payment</button>
-        <p id="paymentResult"></p>
-        
-        <div style="font-size: 0.8rem; color: #666;">
-            <p><b>Demo Cards:</b> Success: 1111... | Fail: 2222...</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1583151433602-0e86b20894e6?auto=format&fit=crop&w=400&q=80" alt="Lure Set">
+            <div class="card-content">
+                <h3>Neon Lure Multi-Pack</h3>
+                <p>Set of 12 high-visibility lures with treble hooks.</p>
+                <p class="price-tag">₹1,200</p>
+                <button class="btn" onclick="trackAction('add_to_cart', 'Lure Set', 1200)">Add to Cart</button>
+                <button class="btn btn-checkout" onclick="initiateCheckout('Lure Set', 1200)">Buy Now</button>
+            </div>
         </div>
     </div>
 
+    <div id="paymentSection">
+        <h3 id="checkoutTitle">Secure Payment</h3>
+        <p>Enter your details to finalize your order.</p>
+        <input type="text" id="cardNumber" placeholder="Card Number (Use 1111 1111 1111 1111 for test)">
+        <button class="btn btn-checkout" onclick="processPayment()">Confirm & Pay</button>
+        <p id="paymentResult" style="margin-top: 15px; font-weight: bold;"></p>
+    </div>
 </div>
 
+<footer>
+    <p>&copy; 2026 JalJugaadu Fishing Gear | Serving Anglers Across India</p>
+</footer>
+
 <script>
-    function showPayment() {
-        document.getElementById("paymentSection").style.display = "block";
-        document.getElementById("paymentSection").scrollIntoView({behavior: 'smooth'});
+    let currentItem = {};
+
+    function trackAction(action, name, price) {
+        gtag('event', action, {
+            item_name: name,
+            value: price,
+            currency: 'INR'
+        });
+        alert(name + " added to your tackle box!");
+    }
+
+    function initiateCheckout(name, price) {
+        currentItem = { name: name, price: price };
+        document.getElementById('checkoutTitle').innerText = "Checkout: " + name;
+        document.getElementById('paymentSection').style.display = 'block';
+        document.getElementById('paymentSection').scrollIntoView({behavior: 'smooth'});
+        
+        gtag('event', 'begin_checkout', {
+            value: price,
+            currency: 'INR',
+            items: [{ item_name: name, price: price }]
+        });
     }
 
     function processPayment() {
@@ -113,30 +155,22 @@
         let result = document.getElementById("paymentResult");
 
         if (card === "1111111111111111") {
-            result.innerHTML = "✅ Transaction Verified! Tight lines!";
+            result.innerHTML = "✅ Success! Shipping to your address soon.";
             result.style.color = "green";
 
-            // Advanced GA4 Purchase Event
             gtag('event', 'purchase', {
-                transaction_id: 'FISH-' + Math.floor(Math.random() * 99999),
-                value: 4999,
+                transaction_id: 'JAL-' + Math.floor(Math.random() * 100000),
+                value: currentItem.price,
                 currency: 'INR',
                 items: [{
-                    item_id: "REEL_001",
-                    item_name: "Deep Sea Pro Reel",
-                    item_category: "Tackle",
-                    price: 4999,
+                    item_name: currentItem.name,
+                    price: currentItem.price,
                     quantity: 1
                 }]
             });
-        } 
-        else if (card === "2222222222222222") {
-            result.innerHTML = "❌ Payment Declined by Bank.";
+        } else {
+            result.innerHTML = "❌ Payment Failed. Please check card details.";
             result.style.color = "red";
-        } 
-        else {
-            result.innerHTML = "❌ Invalid Card Format.";
-            result.style.color = "orange";
         }
     }
 </script>
